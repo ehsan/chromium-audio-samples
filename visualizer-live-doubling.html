@@ -112,7 +112,7 @@ function init() {
 }
 
 function initAudio(stream) {
-    context = new webkitAudioContext();
+    context = new AudioContext();
     
     analyser = context.createAnalyser();
     analyser.fftSize = 2048;

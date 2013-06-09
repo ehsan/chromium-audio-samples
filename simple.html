@@ -245,7 +245,7 @@ function setSourceBuffer(buffer) {
      canvas2.addEventListener("mouseup", handleMouseUp, true);
 
      // Initialize audio
-     context = new webkitAudioContext();
+     context = new AudioContext();
 
      source = context.createBufferSource();
      dryGainNode = context.createGainNode();

@@ -106,7 +106,7 @@ function loadImpulseResponse(url) {
 }
 
 function startOfflineProcessing() {
-    offlineContext = new webkitAudioContext(2, duration * sampleRate, sampleRate);
+    offlineContext = new AudioContext(2, duration * sampleRate, sampleRate);
 
     offlineContext.oncomplete = function(event) {
       var source = context.createBufferSource();
@@ -131,7 +131,7 @@ function startOfflineProcessing() {
 }
 
 function init() {    
-    context = new webkitAudioContext();
+    context = new AudioContext();
 
     loadSourceBuffer("sounds/drum-samples/conga-rhythm.wav");
     loadImpulseResponse("impulse-responses/tim-warehouse/cardiod-rear-35-10/cardiod-rear-levelled.wav");

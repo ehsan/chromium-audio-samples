@@ -421,7 +421,7 @@ function QHandler(event, ui) {
 
 
 function initAudio() {
-    context = new webkitAudioContext();
+    context = new AudioContext();
     filter = context.createBiquadFilter();
     filter.Q.value = 5;
     filter.frequency.value = 2000;

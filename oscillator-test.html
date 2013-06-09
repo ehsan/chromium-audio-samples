@@ -215,7 +215,7 @@ function createRandomPitchSource() {
 
 
 function initAudio() {
-    context = new webkitAudioContext();
+    context = new AudioContext();
             
     osc1 = context.createOscillator();
     osc1.type = osc1.SINE;

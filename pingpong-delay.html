@@ -129,7 +129,7 @@ function loadHihat(url) {
 }
 
 function init() {
-    context = new webkitAudioContext();
+    context = new AudioContext();
     
     // Setup a delay with feedback
     delay1 = context.createDelayNode();

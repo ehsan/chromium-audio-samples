@@ -18,7 +18,7 @@
         }
 
         function gotStream(stream) {
-            var context = new webkitAudioContext();
+            var context = new AudioContext();
 
             // Create an AudioNode from the stream.
             var mediaStreamSource = context.createMediaStreamSource(stream);

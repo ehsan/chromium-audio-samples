@@ -257,7 +257,7 @@ function loadBufferForSource(source, url) {
 
 function init() {
     // Initialize audio
-    context = new webkitAudioContext();
+    context = new AudioContext();
     
     if (context.createDynamicsCompressor) {
         // Create dynamics compressor to sweeten the overall mix.

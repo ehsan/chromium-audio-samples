@@ -411,7 +411,7 @@ function playNote(buffer, pan, x, y, z, sendGain, mainGain, cutoff, resonance, n
     var finalNode;
     if (pan) {
         var panner = context.createPanner();
-        panner.panningModel = webkitAudioPannerNode.HRTF;
+        panner.panningModel = AudioPannerNode.HRTF;
         panner.setPosition(x, y, z);
         filter.connect(panner);
         finalNode = panner;
@@ -561,7 +561,7 @@ function finishLoading() {
 }
 
 function init() {
-    context = new webkitAudioContext();
+    context = new AudioContext();
     
     var audioBuffer = context.createBuffer(1, 1024, 44100.0);
 

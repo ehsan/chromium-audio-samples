@@ -29,7 +29,7 @@ Then we can play this <em>dogBarkingBuffer</em> with a the following code.
 </p>
 
 <pre>
-var context = new webkitAudioContext();
+var context = new AudioContext();
 
 function playSound() {
     var source = context.createBufferSource();  // creates a sound source
@@ -49,7 +49,7 @@ Even better, we could make the function take the <em>buffer</em> and <em>time</e
 </p>
 
 <pre>
-var context = new webkitAudioContext();
+var context = new AudioContext();
 
 function playSound(buffer, time) {
     var source = context.createBufferSource();

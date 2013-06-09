@@ -62,7 +62,7 @@
           var filter = hasBiquadFilter ? context.createBiquadFilter() : context.createLowPass2Filter();
           
           var panner = context.createPanner();
-          panner.panningModel = webkitAudioPannerNode.HRTF;
+          panner.panningModel = AudioPannerNode.HRTF;
           
           // Create inputs to dry/wet mixers
           var dryGainNode = context.createGainNode();
@@ -153,7 +153,7 @@
     function init() {
       prettyPrint();
 
-      context = new webkitAudioContext();
+      context = new AudioContext();
       
       if (context.createDynamicsCompressor) {
           // Create dynamics compressor to sweeten the overall mix.

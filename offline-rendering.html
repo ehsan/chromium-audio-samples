@@ -116,7 +116,7 @@ function playNote(context, time) {
 }
 
 function startOfflineProcessing() {
-    // offlineContext = new webkitAudioContext(2, 2 * 44100, 44100);
+    // offlineContext = new AudioContext(2, 2 * 44100, 44100);
     offlineContext = new webkitOfflineAudioContext(2, 2 * 44100, 44100);
 
     offlineContext.oncomplete = function(event) {
@@ -138,7 +138,7 @@ function startOfflineProcessing() {
 }
 
 function init() {    
-    context = new webkitAudioContext();
+    context = new AudioContext();
 
     loadHihat("sounds/drum-samples/hihat-short.wav");
 }

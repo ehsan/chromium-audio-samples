@@ -520,10 +520,10 @@ function Note(staticAudioRouting, isMonophonic) {
     osc2Octave.loop = true;
     
     var panner1 = context.createPanner();
-    panner1.panningModel = webkitAudioPannerNode.EQUALPOWER;
+    panner1.panningModel = AudioPannerNode.EQUALPOWER;
 
     var panner2 = context.createPanner();
-    panner2.panningModel = webkitAudioPannerNode.EQUALPOWER;
+    panner2.panningModel = AudioPannerNode.EQUALPOWER;
 
     // Amplitude envelope
     var ampEnvelope = context.createGainNode();
@@ -669,10 +669,10 @@ Note.prototype.play = function(wave, wave2, semitone, octave, time) {
     // pan maximum from -90 -> +90 degrees
     var x = Math.sin(0.5*Math.PI * width);
     var z = -Math.cos(0.5*Math.PI * width);
-    panner1.panningModel = webkitAudioPannerNode.EQUALPOWER;
+    panner1.panningModel = AudioPannerNode.EQUALPOWER;
     panner1.setPosition(-x, 0, z);
 
-    panner2.panningModel = webkitAudioPannerNode.EQUALPOWER;
+    panner2.panningModel = AudioPannerNode.EQUALPOWER;
     panner2.setPosition(x, 0, z);
 
     // Amplitude envelope
@@ -840,7 +840,7 @@ StaticAudioRouting.prototype.setMainGrunge = function(driveDb) {
 }
 
 function init() {
-    context = new webkitAudioContext();
+    context = new AudioContext();
     staticAudioRouting = new StaticAudioRouting();
     monophonicNote = new Note(staticAudioRouting, true);
 

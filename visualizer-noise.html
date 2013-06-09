@@ -138,7 +138,7 @@ function draw() {
 }
 
 function initAudio() {
-    context = new webkitAudioContext();
+    context = new AudioContext();
     
     source = context.createBufferSource();
     // filterNode = context.createHighPass2Filter();

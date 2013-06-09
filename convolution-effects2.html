@@ -355,7 +355,7 @@ function initPresets() {
 }
 
 function init() {
-    context = new webkitAudioContext();
+    context = new AudioContext();
     
     convolver = context.createConvolver();
     source = context.createBufferSource();
