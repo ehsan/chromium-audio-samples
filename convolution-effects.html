@@ -79,7 +79,7 @@ var fileList = [
     "sounds/hyper-reality/br-jam-loop.wav",       // 3
 
     // impulse responses
-    "impulse-responses/spatialized5.wav",         // 0
+    "impulse-responses/spatialized1.wav",         // 0
     "impulse-responses/cosmic-ping-long.wav",     // 1
     "impulse-responses/filter-telephone.wav",     // 2
     "impulse-responses/comb-saw2.wav",            // 3
@@ -89,7 +89,7 @@ var fileList = [
     "impulse-responses/comb-saw2.wav",            // 7
     "impulse-responses/matrix-reverb2.wav",       // 8
     "impulse-responses/matrix-reverb3.wav",       // 9
-    "impulse-responses/spatialized4.wav",         // 10
+    "impulse-responses/spatialized2.wav",         // 10
 
     "impulse-responses/tim-warehouse/cardiod-rear-35-10/cardiod-rear-levelled.wav",          // 11
 
@@ -98,7 +98,7 @@ var fileList = [
     "impulse-responses/bin_dfeq/s2_r4_bd.wav",    // 14
     "impulse-responses/wildecho.wav",             // 15
     "impulse-responses/impulse-rhythm2.wav",      // 16
-    "impulse-responses/spreader50-65ms.wav",      // 17
+    "impulse-responses/sifter.wav",      // 17
     "impulse-responses/feedback-spring.wav",      // 18
 
     "impulse-responses/house-impulses/kitchen.wav",                   // 19
@@ -157,6 +157,10 @@ Asset.prototype.load = function(preset) {
     request.onload = function() {
         // asset.buffer = request.buffer;
         asset.buffer = context.createBuffer(request.response, false);
+        if (!asset.buffer) {
+          console.log("Error loading " + asset.url);
+          return;
+        }
         asset.loaded = true;
 
         // Tell all the presets that depend on us that we're ready
